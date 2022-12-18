@@ -9,10 +9,9 @@
 /* Begin PBXBuildFile section */
 		22AD9382294F0CBA0071DF34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AD9381294F0CBA0071DF34 /* AppDelegate.swift */; };
 		22AD9384294F0CBA0071DF34 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AD9383294F0CBA0071DF34 /* SceneDelegate.swift */; };
-		22AD9386294F0CBA0071DF34 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AD9385294F0CBA0071DF34 /* ViewController.swift */; };
+		22AD9386294F0CBA0071DF34 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AD9385294F0CBA0071DF34 /* HomeVC.swift */; };
 		22AD9389294F0CBA0071DF34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22AD9387294F0CBA0071DF34 /* Main.storyboard */; };
 		22AD938B294F0CC10071DF34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22AD938A294F0CC10071DF34 /* Assets.xcassets */; };
-		22AD938E294F0CC10071DF34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22AD938C294F0CC10071DF34 /* LaunchScreen.storyboard */; };
 		22AD9399294F0CC20071DF34 /* HotelBookingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AD9398294F0CC20071DF34 /* HotelBookingTests.swift */; };
 		22AD93A3294F0CC30071DF34 /* HotelBookingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AD93A2294F0CC30071DF34 /* HotelBookingUITests.swift */; };
 		22AD93A5294F0CC30071DF34 /* HotelBookingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AD93A4294F0CC30071DF34 /* HotelBookingUITestsLaunchTests.swift */; };
@@ -39,10 +38,9 @@
 		22AD937E294F0CBA0071DF34 /* HotelBooking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotelBooking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22AD9381294F0CBA0071DF34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22AD9383294F0CBA0071DF34 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		22AD9385294F0CBA0071DF34 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		22AD9385294F0CBA0071DF34 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		22AD9388294F0CBA0071DF34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		22AD938A294F0CC10071DF34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		22AD938D294F0CC10071DF34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		22AD938F294F0CC10071DF34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22AD9394294F0CC20071DF34 /* HotelBookingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HotelBookingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22AD9398294F0CC20071DF34 /* HotelBookingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelBookingTests.swift; sourceTree = "<group>"; };
@@ -99,13 +97,10 @@
 		22AD9380294F0CBA0071DF34 /* HotelBooking */ = {
 			isa = PBXGroup;
 			children = (
-				22AD9381294F0CBA0071DF34 /* AppDelegate.swift */,
-				22AD9383294F0CBA0071DF34 /* SceneDelegate.swift */,
-				22AD9385294F0CBA0071DF34 /* ViewController.swift */,
-				22AD9387294F0CBA0071DF34 /* Main.storyboard */,
-				22AD938A294F0CC10071DF34 /* Assets.xcassets */,
-				22AD938C294F0CC10071DF34 /* LaunchScreen.storyboard */,
 				22AD938F294F0CC10071DF34 /* Info.plist */,
+				22AD93B3294F0E3E0071DF34 /* Module */,
+				22AD93B2294F0E380071DF34 /* Config */,
+				22AD93B1294F0E2D0071DF34 /* Resource */,
 			);
 			path = HotelBooking;
 			sourceTree = "<group>";
@@ -125,6 +120,80 @@
 				22AD93A4294F0CC30071DF34 /* HotelBookingUITestsLaunchTests.swift */,
 			);
 			path = HotelBookingUITests;
+			sourceTree = "<group>";
+		};
+		22AD93B1294F0E2D0071DF34 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				22AD938A294F0CC10071DF34 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		22AD93B2294F0E380071DF34 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				22AD9381294F0CBA0071DF34 /* AppDelegate.swift */,
+				22AD9383294F0CBA0071DF34 /* SceneDelegate.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		22AD93B3294F0E3E0071DF34 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				22AD93B4294F11670071DF34 /* HomeScreen */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		22AD93B4294F11670071DF34 /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				22AD93B9294F11F10071DF34 /* Manager */,
+				22AD93B8294F11E80071DF34 /* ViewControllers */,
+				22AD93B7294F11E10071DF34 /* ViewModels */,
+				22AD93B6294F11D90071DF34 /* Views */,
+				22AD93B5294F11D20071DF34 /* Models */,
+			);
+			path = HomeScreen;
+			sourceTree = "<group>";
+		};
+		22AD93B5294F11D20071DF34 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		22AD93B6294F11D90071DF34 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		22AD93B7294F11E10071DF34 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		22AD93B8294F11E80071DF34 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				22AD9385294F0CBA0071DF34 /* HomeVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		22AD93B9294F11F10071DF34 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				22AD9387294F0CBA0071DF34 /* Main.storyboard */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,7 +300,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22AD938E294F0CC10071DF34 /* LaunchScreen.storyboard in Resources */,
 				22AD938B294F0CC10071DF34 /* Assets.xcassets in Resources */,
 				22AD9389294F0CBA0071DF34 /* Main.storyboard in Resources */,
 			);
@@ -258,7 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22AD9386294F0CBA0071DF34 /* ViewController.swift in Sources */,
+				22AD9386294F0CBA0071DF34 /* HomeVC.swift in Sources */,
 				22AD9382294F0CBA0071DF34 /* AppDelegate.swift in Sources */,
 				22AD9384294F0CBA0071DF34 /* SceneDelegate.swift in Sources */,
 			);
@@ -303,14 +371,6 @@
 				22AD9388294F0CBA0071DF34 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		22AD938C294F0CC10071DF34 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				22AD938D294F0CC10071DF34 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -441,10 +501,11 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HotelBooking/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -469,10 +530,11 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HotelBooking/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
