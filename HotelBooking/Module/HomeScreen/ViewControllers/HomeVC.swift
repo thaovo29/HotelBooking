@@ -19,6 +19,10 @@ class HomeVC: UIViewController {
         setupUI()
         setupVM()
     }
+    override func viewWillAppear(_ animated: Bool) {
+            super.viewWillAppear(animated)
+            navigationController?.setNavigationBarHidden(true, animated: false)
+        }
     
     func setupUI(){
         bottomNav.backgroundColor = UIColor(red: 37/255.0, green: 75/255.0, blue: 160/255.0, alpha: 1)

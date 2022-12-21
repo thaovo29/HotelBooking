@@ -15,6 +15,8 @@ class HomeManager {
         print(1)
         let sb = UIStoryboard(name: "Search", bundle: nil)
         let hotelSearch = sb.instantiateViewController(withIdentifier: "HotelCustomVC") as! HotelCustomVC
+//        let navCon = UINavigationController(rootViewController: vc)
+//        navCon.pushViewController(hotelSearch, animated: true)
         vc.navigationController?.pushViewController(hotelSearch, animated: true)
     }
     
@@ -39,9 +41,12 @@ class HomeManager {
     
     func pushToHome(vc: UIViewController){
         print(1)
-        //        let sb = UIStoryboard(name: "Home", bundle: nil)
-        //        let HomestaySearch = sb.instantiateViewController(withIdentifier: "HomestaySearchVC") as! HomestaySearchVC
-        //        vc.navigationController?.pushViewController(HomestaySearch, animated: true)
+        
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let HomestaySearch = sb.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
+        let navCon = UINavigationController(rootViewController: vc)
+        navCon.pushViewController(HomestaySearch, animated: true)
+//        vc.navigationController?.pushViewController(HomestaySearch, animated: true)
     }
     func pushToSaved(vc: UIViewController){
         print(1)
@@ -60,5 +65,12 @@ class HomeManager {
         //        let sb = UIStoryboard(name: "Home", bundle: nil)
         //        let HomestaySearch = sb.instantiateViewController(withIdentifier: "HomestaySearchVC") as! HomestaySearchVC
         //        vc.navigationController?.pushViewController(HomestaySearch, animated: true)
+    }
+    
+    func makeShadow(view: UIView){
+        view.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        view.layer.shadowOpacity = 1
+        view.layer.shadowOffset = CGSize(width: 0, height: 4)
+        view.layer.shadowRadius = 4
     }
 }

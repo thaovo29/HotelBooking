@@ -24,9 +24,7 @@ class HeaderTitle: UIView {
     }
     func setupUI(){
         self.backgroundColor = .white
-        viewBG.layer.shadowColor = UIColor.black.cgColor
-        viewBG.layer.shadowOffset = CGSize(width: 1, height: -3)
-        viewBG.layer.shadowOpacity = 0.1
+        
         viewBG.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         
         viewBG.translatesAutoresizingMaskIntoConstraints = false
@@ -34,23 +32,24 @@ class HeaderTitle: UIView {
         lblTitle.translatesAutoresizingMaskIntoConstraints = false
         back.image = UIImage(named: "BackArrow")
         lblTitle.font = UIFont.systemFont(ofSize: 30.0, weight: .bold)
-        
+        lblTitle.textColor = UIColor(red: 0.145, green: 0.294, blue: 0.627, alpha: 1)
         viewBG.addSubview(back)
         viewBG.addSubview(lblTitle)
         self.addSubview(viewBG)
         
-        
         NSLayoutConstraint.activate([
-            viewBG.topAnchor.constraint(equalTo: self.topAnchor),
-            viewBG.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            viewBG.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            viewBG.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            viewBG.topAnchor.constraint(equalTo: self.topAnchor, constant: 3),
+            viewBG.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 3),
+            viewBG.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 3),
+            viewBG.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 3),
             
             back.centerYAnchor.constraint(equalTo: viewBG.centerYAnchor),
             back.widthAnchor.constraint(equalToConstant: 16),
             back.heightAnchor.constraint(equalToConstant: 28),
+            back.leadingAnchor.constraint(equalTo: viewBG.leadingAnchor, constant: 30),
             
-            lblTitle.centerXAnchor.constraint(equalTo: viewBG.centerXAnchor)
+            lblTitle.centerXAnchor.constraint(equalTo: viewBG.centerXAnchor),
+            lblTitle.centerYAnchor.constraint(equalTo: viewBG.centerYAnchor)
         ])
         back.isUserInteractionEnabled = true
         let goBack = UITapGestureRecognizer(target: self, action: #selector(goBack))

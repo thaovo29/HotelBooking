@@ -162,16 +162,16 @@ class NavBottomBar: UIView {
             
         ])
         viewHome.isUserInteractionEnabled = true
-        let tapHome = UIGestureRecognizer(target: self, action: #selector(goHome))
-        viewHome.addGestureRecognizer(tapHome)
+        let gestureHome = UITapGestureRecognizer(target: self, action:  #selector (self.goHome))
+        viewHome.addGestureRecognizer(gestureHome)
         
-        let tapSaved = UIGestureRecognizer(target: self, action: #selector(goSaved))
-        viewSaved.addGestureRecognizer(tapSaved)
+        let gestureSaved = UITapGestureRecognizer(target: self, action:  #selector (self.goSaved))
+        viewSaved.addGestureRecognizer(gestureSaved)
         
-        let tapBooking = UIGestureRecognizer(target: self, action: #selector(goBooking))
+        let tapBooking = UITapGestureRecognizer(target: self, action: #selector(self.goBooking))
         viewBooking.addGestureRecognizer(tapBooking)
         
-        let tapSetting = UIGestureRecognizer(target: self, action: #selector(goSetting))
+        let tapSetting = UITapGestureRecognizer(target: self, action: #selector(self.goSetting))
         viewSetting.addGestureRecognizer(tapSetting)
         
     }
