@@ -10,7 +10,7 @@ class HomeVM{
     var discoverMoreModels : [DiscoverMoreModel] = []
     var callbackReloadData : (() -> Void)?
     func getDiscoverData(){
-        HomeService.shared.getDiscoverMoreData { [weak self] data in
+        HomeService.shared.getDiscoverMoreData{ [weak self] data in
             self?.discoverMoreModels = data
             DispatchQueue.main.async {
                 self?.callbackReloadData?()

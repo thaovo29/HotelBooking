@@ -58,15 +58,17 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource{
             cell.navCallBack = {[weak self] navType in
                 guard let self = self else {return}
                 DispatchQueue.main.async {
+                    HomeManager.shared.searchCategory = navType
                     switch(navType) {
                     case .Hotel:
-                        HomeManager.shared.pushToHotelSearch(vc: self)
+                        HomeManager.shared.pushToSearch(vc: self)
                     case .Apartment:
-                        HomeManager.shared.pushToApartmentSearch(vc: self)
+                        
+                        HomeManager.shared.pushToSearch(vc: self)
                     case .Resort:
-                        HomeManager.shared.pushToResortSearch(vc: self)
+                        HomeManager.shared.pushToSearch(vc: self)
                     default:
-                        HomeManager.shared.pushToHomestaySearch(vc: self)
+                        HomeManager.shared.pushToSearch(vc: self)
                     }
                 }
                 

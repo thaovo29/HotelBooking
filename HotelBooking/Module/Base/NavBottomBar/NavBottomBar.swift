@@ -178,8 +178,8 @@ class NavBottomBar: UIView {
     @objc func goHome(){
         print(10)
         if let navigationController = self.window?.rootViewController as? UINavigationController {
-            let homeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
-            navigationController.pushViewController(homeVC, animated: true)
+//            let homeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
+            navigationController.popToRootViewController(animated: true)
         }
     }
     

@@ -9,36 +9,26 @@ import Foundation
 import UIKit
 
 class HotelCustomVM {
-    var adultNo: Int?
-    var childNo: Int?
-    var roomNo: Int?
     var places: String?
-    var dateCheckIn: Date?
-    var dateCheckOut: Date?
     var callBackUpdateHeadCount : ((Int, Int, Int) -> Void)?
     var callBackHaventInputPlace : (() -> Void)?
+    var orderDetail: OrderDetailModel?
     func setup(){
-        if adultNo == nil {
-            adultNo = 1
-        }
-        if childNo == nil {childNo = 0}
-        if roomNo == nil {roomNo = 1}
-        if dateCheckIn == nil {dateCheckIn = Date()}
-        if dateCheckOut == nil {dateCheckOut = Calendar.current.date(byAdding: .day, value: 1, to: Date()) }
+        orderDetail = OrderDetailModel()
     }
     
     func setMember(adult:Int, room: Int, child: Int){
-        self.adultNo = adult
-        self.roomNo = room
-        self.childNo = child
+        self.orderDetail?.adultNo = adult
+        self.orderDetail?.roomNo = room
+        self.orderDetail?.childNo = child
     }
     
     func presentSelectNumber(vc: UIViewController){
-        SearchManager.shared.presentSelectNumberOfMember(vc: vc, room: self.roomNo ?? 1, adults: self.adultNo ?? 1, children: self.childNo ?? 0) {[weak self] room, adult, child in
+        SearchManager.shared.presentSelectNumberOfMember(vc: vc, room: self.orderDetail?.roomNo ?? 1, adults: self.orderDetail?.adultNo ?? 1, children: self.orderDetail?.childNo ?? 0) {[weak self] room, adult, child in
             DispatchQueue.main.async { [weak self] in
-                self?.adultNo = adult
-                self?.roomNo = room
-                self?.childNo = child
+                self?.orderDetail?.adultNo = adult
+                self?.orderDetail?.roomNo = room
+                self?.orderDetail?.childNo = child
                 self?.callBackUpdateHeadCount?(room, adult, child)
             }
         }
@@ -46,10 +36,11 @@ class HotelCustomVM {
 
     
     func pushToHotelSearch(vc: UIViewController){
-        guard let places = places else {
-            self.callBackHaventInputPlace?()
-            return
-        }
-        SearchManager.shared.pushToHotelSearch(vc: vc, place: places)
+//        guard let places = places else {
+//            self.callBackHaventInputPlace?()
+//            return
+//        }
+        guard let orderDetail = orderDetail else {return}
+        SearchManager.shared.pushToHotelSearch(vc: vc, place: places ?? "", orderDetail: orderDetail)
     }
 }

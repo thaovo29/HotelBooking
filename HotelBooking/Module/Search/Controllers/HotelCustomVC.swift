@@ -34,12 +34,19 @@ class HotelCustomVC: UIViewController {
         setupVM()
         // Do any additional setup after loading the view.
     }
+    @IBAction func pickCheckIn(_ sender: Any) {
+        vm.orderDetail?.checkInDay=lblDayCI.date
+    }
+    
+    @IBAction func pickCheckOut(_ sender: Any) {
+        vm.orderDetail?.checkOutDay = lblDayCO.date
+    }
     override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(animated)
             navigationController?.setNavigationBarHidden(true, animated: false)
         }
     func setUIForHeadCount(){
-        guard let room = vm.roomNo, let adult = vm.adultNo, let child = vm.childNo else {return}
+        guard let room = vm.orderDetail?.roomNo, let adult = vm.orderDetail?.adultNo, let child = vm.orderDetail?.childNo else {return}
         
         var str = ""
         str += "\(room)"
@@ -57,14 +64,30 @@ class HotelCustomVC: UIViewController {
     }
     
     func setupVM(){
+        vm.setup()
         vm.callBackUpdateHeadCount = { [weak self] room, adult, child in
 //            self?.vm.setMember(adult: adult, room: room, child: child)
             self?.setUIForHeadCount()
         }
     }
     
+    func headerUI(){
+        guard let type = HomeManager.shared.searchCategory else {return}
+        switch (type){
+        case .Hotel:
+            viewHeaderTitle.lblTitle.text = "Hotel"
+        case .Apartment:
+            viewHeaderTitle.lblTitle.text = "Apartment"
+        case .Homestay:
+            viewHeaderTitle.lblTitle.text = "Homestay"
+        case .Resort:
+            viewHeaderTitle.lblTitle.text = "Resort"
+        }
+    }
+    
     func setupUI(){
-        viewHeaderTitle.lblTitle.text = "Hotel"
+        headerUI()
+        HomeManager.shared.makeShadow(view: viewHeaderTitle)
         tfSearchPlace.layer.borderWidth = 1
         tfSearchPlace.layer.borderColor = UIColor(red: 139/255.0, green: 140/255.0, blue: 154/255.0, alpha: 1).cgColor
         tfSearchPlace.layer.cornerRadius = 8

@@ -118,6 +118,7 @@
                 <outlet property="ic_Hotel" destination="bFE-9U-8Vp" id="gyg-la-K9h"/>
                 <outlet property="ic_Resort" destination="PmK-al-A5s" id="UjW-BQ-nN0"/>
                 <outlet property="lblApartment" destination="Rrc-ZJ-KQe" id="9WW-YK-mau"/>
+                <outlet property="lblHello" destination="BNN-l8-DL1" id="Sq8-M2-35G"/>
                 <outlet property="lblHomestay" destination="ju1-eM-MU4" id="gBc-AG-3mG"/>
                 <outlet property="lblHotel" destination="dgD-TO-rbJ" id="Lmh-W9-qjs"/>
                 <outlet property="lblResort" destination="tSK-BQ-zYf" id="tmM-wK-HQZ"/>

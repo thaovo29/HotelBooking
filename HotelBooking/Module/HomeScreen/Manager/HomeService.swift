@@ -6,24 +6,24 @@
 //
 
 import Foundation
-
+import Alamofire
+import SwiftyJSON
 class HomeService{
     public static var shared = HomeService()
     
-    func getDiscoverMoreData(callBack: (([DiscoverMoreModel]) -> Void)?){
-        
-        let url = URL(string: "http://52.36.5.201/getDiscoverList")!
-        let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
-            guard let data = data else {return}
-            do{
-                let user = try JSONDecoder().decode([DiscoverMoreModel].self, from: data)
-                callBack?(user)
-            }
-            catch {
+    func getDiscoverMoreData(callBack: @escaping(([DiscoverMoreModel]) -> ())){
+        let url = "http://52.36.5.201/getDiscoverList"
+        AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default).responseJSON { response in
+            switch (response.result)
+            {
+            case .success(_):
+                if let jsonData = response.data{
+                    let data = JSON(jsonData)
+                    callBack(DiscoverMoreModel.parseDataDiscoverMore(arrJS: data.array ?? []))
+                }
+            case .failure(let error):
                 print(error)
             }
-            
-        }
-        task.resume()
+          }
     }
 }

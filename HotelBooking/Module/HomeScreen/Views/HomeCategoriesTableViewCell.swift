@@ -9,6 +9,7 @@ import UIKit
 
 class HomeCategoriesTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var lblHello: UILabel!
     @IBOutlet weak var viewResort: UIView!
     @IBOutlet weak var viewApartment: UIView!
     @IBOutlet weak var viewHotel: UIView!
@@ -172,8 +173,19 @@ class HomeCategoriesTableViewCell: UITableViewCell {
     @objc func navHomestay(){
         self.navCallBack?(searchType.Homestay)
     }
+    
+    func setHello(){
+        let hour = Calendar.current.component(.hour, from: Date())
+        if 0 < hour && hour < 12{
+            lblHello.text = "Good morning!"
+        } else if (hour < 18){
+            lblHello.text = "Good afternoon!"
+        } else {
+            lblHello.text = "Good evening!"
+        }
+    }
     func setupUI(){
-        
+        setHello()
         setUIforHotelView()
         setUIforApartmentView()
         setUIforResortView()

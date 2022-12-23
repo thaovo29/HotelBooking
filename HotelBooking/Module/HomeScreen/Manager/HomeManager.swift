@@ -10,33 +10,15 @@ import UIKit
 class HomeManager {
     public static var shared = HomeManager()
     private let kHome = "Home"
-    
-    func pushToHotelSearch(vc: UIViewController){
+    var searchCategory: searchType?
+    var saved: [HotelSearchItem] = []
+    var booking: [OrderDetailModel] = []
+    func pushToSearch(vc: UIViewController){
         print(1)
         let sb = UIStoryboard(name: "Search", bundle: nil)
         let hotelSearch = sb.instantiateViewController(withIdentifier: "HotelCustomVC") as! HotelCustomVC
-//        let navCon = UINavigationController(rootViewController: vc)
-//        navCon.pushViewController(hotelSearch, animated: true)
-        vc.navigationController?.pushViewController(hotelSearch, animated: true)
-    }
-    
-    func pushToApartmentSearch(vc: UIViewController){
-        print(2)
         
-        //        let sb = UIStoryboard(name: "Home", bundle: nil)
-        //        let ApartmentSearch = sb.instantiateViewController(withIdentifier: "ApartmentSearchVC") as! ApartmentSearchVC
-        //        vc.navigationController?.pushViewController(ApartmentSearch, animated: true)
-    }
-    @objc func pushToResortSearch(vc: UIViewController){
-        //        let sb = UIStoryboard(name: "Home", bundle: nil)
-        //        let ResortSearch = sb.instantiateViewController(withIdentifier: "ResortSearchVC") as! ResortSearchVC
-        //        vc.navigationController?.pushViewController(ResortSearch, animated: true)
-    }
-    
-    func pushToHomestaySearch(vc: UIViewController){
-        //        let sb = UIStoryboard(name: "Home", bundle: nil)
-        //        let HomestaySearch = sb.instantiateViewController(withIdentifier: "HomestaySearchVC") as! HomestaySearchVC
-        //        vc.navigationController?.pushViewController(HomestaySearch, animated: true)
+        vc.navigationController?.pushViewController(hotelSearch, animated: true)
     }
     
     func pushToHome(vc: UIViewController){
