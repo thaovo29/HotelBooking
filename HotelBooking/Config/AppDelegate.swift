@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import GoogleMaps
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "HomeVC") 
-        
+        GMSServices.provideAPIKey("AIzaSyDc4IppKvEQkl8IM5NwTCvLt39UsVReJkY")
         let navigation = UINavigationController(rootViewController: vc)
         self.window?.rootViewController = navigation
         self.window?.makeKeyAndVisible()

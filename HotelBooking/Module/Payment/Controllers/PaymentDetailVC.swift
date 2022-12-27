@@ -27,6 +27,45 @@ class PaymentDetailVC: UIViewController {
         setupUI()
     }
     
+    @IBAction func actionPay(_ sender: Any) {
+        if self.vm.checkInformation() {
+            let alert = UIAlertController(title: "\(HomeManager.shared.getTypeSearch()) Booking", message: "You have already booked \(HomeManager.shared.getTypeSearch()) at \(vm.orderDetail?.hotel.name ?? "")", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                switch action.style{
+                case .default:
+                    guard let order = self.vm.orderDetail else {return}
+                    HomeManager.shared.booking.append(order)
+                    self.navigationController?.popToRootViewController(animated: true)
+                    
+                case .cancel:
+                    print("cancel")
+                    
+                case .destructive:
+                    print("destructive")
+                    
+                }
+            }))
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            let alert = UIAlertController(title: "Alert", message: "You have to fill out all the field", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                switch action.style{
+                case .default:
+                    print("default")
+                case .cancel:
+                    print("cancel")
+                    
+                case .destructive:
+                    print("destructive")
+                    
+                }
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    
     func setupVM(){
         vm.bindData(orderDetail: orderDetail)
     }
@@ -61,11 +100,35 @@ extension PaymentDetailVC: UITableViewDelegate, UITableViewDataSource{
         } else if indexPath.row == 1{
             guard let cell = table.dequeueReusableCell(withIdentifier: CustomerInformationTBVCell.identifier) as? CustomerInformationTBVCell
             else {return UITableViewCell()}
+            cell.callbackAddName = {[weak self] cusname in
+                self?.vm.orderDetail?.customerName = cusname
+            }
+            cell.callbackAddEmail = { [weak self] email in
+                self?.vm.orderDetail?.customerEmail = email
+            }
+            cell.callbackAddPhoneNumber = { [weak self] phoneNum in
+                self?.vm.orderDetail?.customerPhone = phoneNum
+            }
             return cell
         }
         else{
             guard let cell = table.dequeueReusableCell(withIdentifier: PaymentMethodTBVCell.identifier) as? PaymentMethodTBVCell
             else{ return UITableViewCell()}
+            cell.callbackAddCardnumber = { [weak self] cardNum in
+                self?.vm.orderDetail?.cardNumber = cardNum
+            }
+            cell.callbackAddCardname = { [weak self] cardName in
+                self?.vm.orderDetail?.cardOwner = cardName
+            }
+            cell.callbackAddCardCVV = { [weak self] cvv in
+                self?.vm.orderDetail?.cardExpireDate = cvv
+            }
+            cell.callbackAddCardExpireDate = { [weak self] expireDate in
+                self?.vm.orderDetail?.cardExpireDate = expireDate
+            }
+            cell.callBackPayBy = {[weak self] payby in
+                self?.vm.orderDetail?.paymentMethod = payby
+            }
             return cell
         }
     }

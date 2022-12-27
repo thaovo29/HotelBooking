@@ -36,6 +36,9 @@ class NavBottomBar: UIView {
     func setupUI(){
         self.backgroundColor = UIColor(red: 37/255.0, green: 75/255.0, blue: 160/255.0, alpha: 1)
         viewBG.layer.cornerRadius = 16
+        self.layer.cornerRadius = 16
+        viewHome.layer.cornerRadius = 16
+        viewSetting.layer.cornerRadius = 16
         viewBG.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         viewBG.backgroundColor = UIColor(red: 37/255.0, green: 75/255.0, blue: 160/255.0, alpha: 1)
         
@@ -184,11 +187,16 @@ class NavBottomBar: UIView {
     }
     
     @objc func goSaved(){
-        print(1)
-        
+        if let navigationController = self.window?.rootViewController as? UINavigationController {
+            let SavedVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SavedViewController") as! SavedViewController
+            navigationController.pushViewController(SavedVC, animated: true)
+        }
     }
     @objc func goBooking(){
-        print(1)
+        if let navigationController = self.window?.rootViewController as? UINavigationController {
+            let SavedVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BookingVC") as! BookingVC
+            navigationController.pushViewController(SavedVC, animated: true)
+        }
         
     }
     @objc func goSetting(){

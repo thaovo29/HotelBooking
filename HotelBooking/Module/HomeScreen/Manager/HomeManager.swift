@@ -11,8 +11,8 @@ class HomeManager {
     public static var shared = HomeManager()
     private let kHome = "Home"
     var searchCategory: searchType?
-    var saved: [HotelSearchItem] = []
-    var booking: [OrderDetailModel] = []
+    var saved = [HotelSearchItem]()
+    var booking = [OrderDetailModel]()
     func pushToSearch(vc: UIViewController){
         print(1)
         let sb = UIStoryboard(name: "Search", bundle: nil)
@@ -54,5 +54,25 @@ class HomeManager {
         view.layer.shadowOpacity = 1
         view.layer.shadowOffset = CGSize(width: 0, height: 4)
         view.layer.shadowRadius = 4
+    }
+    
+    func getTypeSearch()-> String{
+        guard let str = self.searchCategory else{ return ""}
+        switch str {
+        case .Resort:
+            return "Resort"
+        case .Homestay:
+            return "Homestay"
+        case .Hotel:
+            return "Hotel"
+        default:
+            return "Apartment"
+        }
+    }
+    
+    func pushToBookingDetail(vc: UIViewController, order: OrderDetailModel){
+        let newvc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BookingDetailVC") as! BookingDetailVC
+        newvc.orderDetail = order
+        vc.navigationController?.pushViewController(newvc, animated: true)
     }
 }

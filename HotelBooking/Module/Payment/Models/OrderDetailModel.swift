@@ -16,7 +16,7 @@ struct OrderDetailModel {
     var customerName: String
     var customerPhone: String
     var customerEmail: String
-    var paymentMethod: String
+    var paymentMethod: String = "Cash"
     var cardOwner: String
     var cardNumber: String
     var CVV: String
@@ -33,7 +33,7 @@ struct OrderDetailModel {
         self.customerName = customerName ?? ""
         self.customerPhone = customerPhone ?? ""
         self.customerEmail = customerEmail ?? ""
-        self.paymentMethod = paymentMethod ?? ""
+        self.paymentMethod = paymentMethod ?? "Cash"
         self.cardOwner = cardOwner ?? ""
         self.cardNumber = cardNumber ?? ""
         self.CVV = CVV ?? ""

@@ -67,6 +67,9 @@
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Pay"/>
+                                        <connections>
+                                            <action selector="actionPay:" destination="Hyo-Z8-Ch8" eventType="touchUpInside" id="5lj-gD-Ycq"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.20000000000000001" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -81,7 +84,7 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Qdj-c3-VUy">
                                 <rect key="frame" x="0.0" y="115" width="414" height="696"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NIx-yi-toS"/>

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import GoogleMaps
 
 class HotelDetailVC: UIViewController {
 
@@ -18,6 +19,7 @@ class HotelDetailVC: UIViewController {
     var vm = HotelDetailVM()
     override func viewDidLoad() {
         super.viewDidLoad()
+//        GMSServices.provideAPIKey("AIzaSyDc4IppKvEQkl8IM5NwTCvLt39UsVReJkY")
         setupVM()
         // Do any additional setup after loading the view.
         setupUI()
@@ -26,7 +28,7 @@ class HotelDetailVC: UIViewController {
         table.register(HotelIntroduceTableViewCell.nib(), forCellReuseIdentifier: HotelIntroduceTableViewCell.identifier)
         table.register(HotelDetailAboutTBVCell.nib(), forCellReuseIdentifier: HotelDetailAboutTBVCell.identifier)
         table.register(HotelDetailFacilityTBVCell.nib(), forCellReuseIdentifier: HotelDetailFacilityTBVCell.identifier)
-
+        table.register(LocationTableViewCell.nib(), forCellReuseIdentifier: LocationTableViewCell.identifier)
     }
     
     @IBAction func openRooms(_ sender: Any) {
@@ -34,6 +36,18 @@ class HotelDetailVC: UIViewController {
     }
     func setupVM(){
         vm.bindData(orderDetail: orderDetail)
+        if let hotel = self.vm.orderDetail?.hotel{
+            guard HomeManager.shared.saved.firstIndex(where: { item in
+                item.name == hotel.name
+            }) != nil
+            else {
+                self.viewHeader.like.image = UIImage(named: "ic_heart")
+                self.viewHeader.isLiked = false
+                return
+            }
+            self.viewHeader.like.image = UIImage(named: "ic_heart_fill")
+            self.viewHeader.isLiked = true
+        }
     }
     
     func setupUI(){
@@ -41,6 +55,40 @@ class HotelDetailVC: UIViewController {
         HomeManager.shared.makeShadow(view: viewHeader)
         btnCheckAvailabel.layer.cornerRadius = 8
         lblPrice.text = "$\(vm.getPrice())/night"
+        
+        
+        
+        viewHeader.callBackLike = { [weak self] isLiked in
+            guard let self = self else{return}
+            DispatchQueue.main.async {
+                self.viewHeader.isLiked.toggle()
+                if self.viewHeader.isLiked{
+                    self.viewHeader.like.image = UIImage(named: "ic_heart_fill")
+                } else{
+                    self.viewHeader.like.image = UIImage(named: "ic_heart")
+                }
+            }
+            if isLiked {
+                if let hotel = self.vm.orderDetail?.hotel{
+                    if let index = HomeManager.shared.saved.firstIndex(where: { item in
+                        item.name == hotel.name
+                    }) {
+                        HomeManager.shared.saved.remove(at: index)
+                    }
+                }
+            } else{
+                if let hotel = self.vm.orderDetail?.hotel{
+                    guard let index = HomeManager.shared.saved.firstIndex(where: { item in
+                        item.name == hotel.name
+                    })
+                    else {
+                        HomeManager.shared.saved.append(hotel)
+                        return
+                    }
+                    HomeManager.shared.saved.remove(at: index)
+                }
+            }
+        }
     }
 }
 
@@ -79,9 +127,14 @@ extension HotelDetailVC : UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         else{
-            return UITableViewCell()
+            guard let cell = table.dequeueReusableCell(withIdentifier: LocationTableViewCell.identifier) as? LocationTableViewCell
+            else{return UITableViewCell()}
+            if let hotel = vm.orderDetail?.hotel {
+                cell.setupUI(lat: hotel.latitude, long: hotel.longitude, hotelName: hotel.name)
+            }
+            return cell
         }
     }
     
-    
 }
+

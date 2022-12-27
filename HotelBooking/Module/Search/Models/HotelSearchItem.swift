@@ -18,6 +18,7 @@ struct HotelSearchItem :Codable {
     var longitude: Float
     var latitude: Float
     var room: [RoomItem]
+    var isSaved: Bool = false
     
     init(json: JSON){
         id = json["id"].intValue

@@ -13,7 +13,7 @@ class SearchService{
     
     func getHotelItemData(callBack: @escaping(([HotelSearchItem]) -> ())){
         
-        let url = "http://52.36.5.201/getHotelList"
+        let url = getSearchType()
         AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default).responseJSON { response in
             switch (response.result)
             {
@@ -42,5 +42,19 @@ class SearchService{
                 print(error)
             }
           }
+    }
+    
+    func getSearchType() -> String{
+        guard let type = HomeManager.shared.searchCategory else {return ""}
+        switch type{
+        case .Hotel:
+            return "http://52.36.5.201/getHotelList"
+        case .Homestay:
+            return "http://52.36.5.201/getHomestayList"
+        case .Resort:
+            return "http://52.36.5.201/getResortList"
+        case .Apartment:
+            return "http://52.36.5.201/getApartmentList"
+        }
     }
 }

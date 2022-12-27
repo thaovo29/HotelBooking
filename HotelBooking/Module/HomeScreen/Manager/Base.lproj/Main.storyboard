@@ -59,6 +59,189 @@
             </objects>
             <point key="canvasLocation" x="57.971014492753625" y="-2.0089285714285712"/>
         </scene>
+        <!--Saved View Controller-->
+        <scene sceneID="3Aj-X0-PeH">
+            <objects>
+                <viewController storyboardIdentifier="SavedViewController" id="gaV-QJ-iUq" customClass="SavedViewController" customModule="HotelBooking" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0WH-mP-V0A">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6za-Uc-npO" customClass="HeaderTitle" customModule="HotelBooking" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="30" width="414" height="85"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="381-yt-5cc"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VWo-Lb-6N0">
+                                <rect key="frame" x="0.0" y="792" width="414" height="104"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zqi-Bm-tOG" customClass="NavBottomBar" customModule="HotelBooking" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="792" width="414" height="70"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="aeU-Ja-SGC"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8kY-BY-x98">
+                                <rect key="frame" x="20" y="115" width="374" height="677"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="n7l-Jm-snI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VWo-Lb-6N0" firstAttribute="leading" secondItem="n7l-Jm-snI" secondAttribute="leading" id="AMj-tE-aSY"/>
+                            <constraint firstItem="n7l-Jm-snI" firstAttribute="trailing" secondItem="VWo-Lb-6N0" secondAttribute="trailing" id="CMp-Ls-PmU"/>
+                            <constraint firstItem="VWo-Lb-6N0" firstAttribute="top" secondItem="Zqi-Bm-tOG" secondAttribute="top" id="GLg-9u-MOt"/>
+                            <constraint firstItem="VWo-Lb-6N0" firstAttribute="top" secondItem="8kY-BY-x98" secondAttribute="bottom" id="MIa-nB-QSu"/>
+                            <constraint firstItem="8kY-BY-x98" firstAttribute="top" secondItem="6za-Uc-npO" secondAttribute="bottom" id="PCr-rL-sxh"/>
+                            <constraint firstItem="6za-Uc-npO" firstAttribute="leading" secondItem="n7l-Jm-snI" secondAttribute="leading" id="QYf-hy-IuE"/>
+                            <constraint firstItem="Zqi-Bm-tOG" firstAttribute="leading" secondItem="n7l-Jm-snI" secondAttribute="leading" id="R2t-1p-6DI"/>
+                            <constraint firstItem="n7l-Jm-snI" firstAttribute="trailing" secondItem="Zqi-Bm-tOG" secondAttribute="trailing" id="U8f-Aj-Gkk"/>
+                            <constraint firstAttribute="bottom" secondItem="VWo-Lb-6N0" secondAttribute="bottom" id="dFa-Pc-QO0"/>
+                            <constraint firstItem="6za-Uc-npO" firstAttribute="top" secondItem="0WH-mP-V0A" secondAttribute="top" constant="30" id="gP2-u0-upE"/>
+                            <constraint firstItem="n7l-Jm-snI" firstAttribute="bottom" secondItem="Zqi-Bm-tOG" secondAttribute="bottom" id="nFq-6e-Ofj"/>
+                            <constraint firstItem="n7l-Jm-snI" firstAttribute="trailing" secondItem="8kY-BY-x98" secondAttribute="trailing" constant="20" id="rjW-Sa-buG"/>
+                            <constraint firstItem="n7l-Jm-snI" firstAttribute="trailing" secondItem="6za-Uc-npO" secondAttribute="trailing" id="vKq-h1-urr"/>
+                            <constraint firstItem="8kY-BY-x98" firstAttribute="leading" secondItem="n7l-Jm-snI" secondAttribute="leading" constant="20" id="wL1-Gq-cfD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bgNavView" destination="VWo-Lb-6N0" id="syE-OY-R09"/>
+                        <outlet property="headerView" destination="6za-Uc-npO" id="mmE-UK-FBx"/>
+                        <outlet property="navView" destination="Zqi-Bm-tOG" id="yn3-pM-mf1"/>
+                        <outlet property="table" destination="8kY-BY-x98" id="QS1-aI-kF7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SSy-9a-kSi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="799" y="14"/>
+        </scene>
+        <!--BookingVC-->
+        <scene sceneID="qdg-BC-y56">
+            <objects>
+                <viewController storyboardIdentifier="BookingVC" id="c9Y-LR-7Yf" customClass="BookingVC" customModule="HotelBooking" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="K41-Nf-fer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YgC-C1-1Pj" customClass="HeaderTitle" customModule="HotelBooking" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="30" width="414" height="85"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="N2S-SP-OXu"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mle-bK-NXA">
+                                <rect key="frame" x="0.0" y="792" width="414" height="104"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MUp-WP-go8" customClass="NavBottomBar" customModule="HotelBooking" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="792" width="414" height="70"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="Crg-EK-hga"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6IR-gB-Yqv">
+                                <rect key="frame" x="20" y="115" width="374" height="677"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cxk-bq-4rp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cxk-bq-4rp" firstAttribute="trailing" secondItem="MUp-WP-go8" secondAttribute="trailing" id="4Ph-sF-vvi"/>
+                            <constraint firstItem="YgC-C1-1Pj" firstAttribute="leading" secondItem="cxk-bq-4rp" secondAttribute="leading" id="5gF-Uv-f0a"/>
+                            <constraint firstItem="YgC-C1-1Pj" firstAttribute="top" secondItem="K41-Nf-fer" secondAttribute="top" constant="30" id="Bfu-of-N0t"/>
+                            <constraint firstItem="cxk-bq-4rp" firstAttribute="trailing" secondItem="YgC-C1-1Pj" secondAttribute="trailing" id="IJQ-mR-0Im"/>
+                            <constraint firstItem="cxk-bq-4rp" firstAttribute="trailing" secondItem="6IR-gB-Yqv" secondAttribute="trailing" constant="20" id="J9U-sy-YER"/>
+                            <constraint firstItem="MUp-WP-go8" firstAttribute="leading" secondItem="cxk-bq-4rp" secondAttribute="leading" id="JUs-yk-lle"/>
+                            <constraint firstItem="Mle-bK-NXA" firstAttribute="top" secondItem="MUp-WP-go8" secondAttribute="top" id="MhO-R8-L9x"/>
+                            <constraint firstItem="6IR-gB-Yqv" firstAttribute="top" secondItem="YgC-C1-1Pj" secondAttribute="bottom" id="Mqb-ns-IIA"/>
+                            <constraint firstAttribute="bottom" secondItem="Mle-bK-NXA" secondAttribute="bottom" id="VXR-jl-kv6"/>
+                            <constraint firstItem="Mle-bK-NXA" firstAttribute="top" secondItem="6IR-gB-Yqv" secondAttribute="bottom" id="YKV-di-12D"/>
+                            <constraint firstItem="cxk-bq-4rp" firstAttribute="trailing" secondItem="Mle-bK-NXA" secondAttribute="trailing" id="Yi6-J0-Tmw"/>
+                            <constraint firstItem="Mle-bK-NXA" firstAttribute="leading" secondItem="cxk-bq-4rp" secondAttribute="leading" id="egA-vK-LA1"/>
+                            <constraint firstItem="6IR-gB-Yqv" firstAttribute="leading" secondItem="cxk-bq-4rp" secondAttribute="leading" constant="20" id="jEs-zu-6Ra"/>
+                            <constraint firstItem="cxk-bq-4rp" firstAttribute="bottom" secondItem="MUp-WP-go8" secondAttribute="bottom" id="kvy-Bs-mBP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="table" destination="6IR-gB-Yqv" id="zTJ-zb-UMY"/>
+                        <outlet property="viewHeader" destination="YgC-C1-1Pj" id="Nbd-ml-OP8"/>
+                        <outlet property="viewNav" destination="MUp-WP-go8" id="5mL-M9-5pS"/>
+                        <outlet property="viewbgNav" destination="Mle-bK-NXA" id="7Wy-ni-xRP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OAO-ko-mJK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1507.2463768115942" y="15.401785714285714"/>
+        </scene>
+        <!--Booking DetailVC-->
+        <scene sceneID="vBV-CC-alK">
+            <objects>
+                <viewController storyboardIdentifier="BookingDetailVC" id="nAh-aC-WBd" customClass="BookingDetailVC" customModule="HotelBooking" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5X3-Ju-eU0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RVj-D6-vGN" customClass="HeaderTitle" customModule="HotelBooking" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="30" width="414" height="85"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="42B-VU-O62"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QmY-ct-SBm">
+                                <rect key="frame" x="0.0" y="792" width="414" height="104"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BMo-GF-1xC" customClass="NavBottomBar" customModule="HotelBooking" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="792" width="414" height="70"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="g3O-Jz-xzw"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="PC2-aR-aC6">
+                                <rect key="frame" x="0.0" y="115" width="414" height="677"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="TbU-tN-Dxv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TbU-tN-Dxv" firstAttribute="trailing" secondItem="BMo-GF-1xC" secondAttribute="trailing" id="08u-aN-2xd"/>
+                            <constraint firstItem="QmY-ct-SBm" firstAttribute="leading" secondItem="TbU-tN-Dxv" secondAttribute="leading" id="0f0-Ab-tyZ"/>
+                            <constraint firstItem="QmY-ct-SBm" firstAttribute="top" secondItem="PC2-aR-aC6" secondAttribute="bottom" id="3f4-TB-o0f"/>
+                            <constraint firstItem="PC2-aR-aC6" firstAttribute="leading" secondItem="TbU-tN-Dxv" secondAttribute="leading" id="5ru-lw-ry2"/>
+                            <constraint firstItem="PC2-aR-aC6" firstAttribute="top" secondItem="RVj-D6-vGN" secondAttribute="bottom" id="AZV-o2-YTt"/>
+                            <constraint firstItem="QmY-ct-SBm" firstAttribute="top" secondItem="BMo-GF-1xC" secondAttribute="top" id="Czw-JW-oSD"/>
+                            <constraint firstItem="RVj-D6-vGN" firstAttribute="top" secondItem="5X3-Ju-eU0" secondAttribute="top" constant="30" id="Gci-NB-GDT"/>
+                            <constraint firstItem="TbU-tN-Dxv" firstAttribute="trailing" secondItem="RVj-D6-vGN" secondAttribute="trailing" id="Zuc-BB-nVQ"/>
+                            <constraint firstItem="TbU-tN-Dxv" firstAttribute="trailing" secondItem="QmY-ct-SBm" secondAttribute="trailing" id="c7e-D4-ZpD"/>
+                            <constraint firstItem="TbU-tN-Dxv" firstAttribute="bottom" secondItem="BMo-GF-1xC" secondAttribute="bottom" id="d2R-3H-wn7"/>
+                            <constraint firstItem="TbU-tN-Dxv" firstAttribute="trailing" secondItem="PC2-aR-aC6" secondAttribute="trailing" id="fUu-7e-cCW"/>
+                            <constraint firstItem="BMo-GF-1xC" firstAttribute="leading" secondItem="TbU-tN-Dxv" secondAttribute="leading" id="kcc-4G-bGy"/>
+                            <constraint firstItem="RVj-D6-vGN" firstAttribute="leading" secondItem="TbU-tN-Dxv" secondAttribute="leading" id="lnS-S1-loY"/>
+                            <constraint firstAttribute="bottom" secondItem="QmY-ct-SBm" secondAttribute="bottom" id="vCJ-pi-lYq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="table" destination="PC2-aR-aC6" id="eOv-Pr-yGz"/>
+                        <outlet property="viewHeader" destination="RVj-D6-vGN" id="gQJ-4I-y8m"/>
+                        <outlet property="viewNav" destination="BMo-GF-1xC" id="fVw-zl-8gb"/>
+                        <outlet property="viewbgnav" destination="QmY-ct-SBm" id="em0-C3-8Iq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kTj-02-0ee" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2215.9420289855075" y="14.732142857142856"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">

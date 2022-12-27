@@ -13,6 +13,10 @@ class CustomerInformationTBVCell: UITableViewCell {
     @IBOutlet weak var tfPhoneNumber: UITextField!
     @IBOutlet weak var tfEmail: UITextField!
     @IBOutlet weak var tfFullName: UITextField!
+    
+    var callbackAddName: ((String) -> Void)?
+    var callbackAddEmail: ((String) -> Void)?
+    var callbackAddPhoneNumber: ((String) -> Void)?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -26,6 +30,20 @@ class CustomerInformationTBVCell: UITableViewCell {
         view.layer.shadowRadius = 4
     }
 
+    @IBAction func addName(_ sender: Any) {
+        guard let text = tfFullName.text else {return}
+        self.callbackAddName?(text)
+    }
+    
+    @IBAction func addEmail(_ sender: Any) {
+        guard let text = tfEmail.text else {return}
+        self.callbackAddEmail?(text)
+    }
+    
+    @IBAction func addPhone(_ sender: Any) {
+        guard let text = tfPhoneNumber.text else {return}
+        self.callbackAddPhoneNumber?(text)
+    }
     
     func setupUI(){
         tfEmail.layer.cornerRadius = 8
@@ -36,7 +54,9 @@ class CustomerInformationTBVCell: UITableViewCell {
         makeShadow(view: tfEmail)
         makeShadow(view: tfFullName)
         makeShadow(view: tfPhoneNumber)
-        
+        tfEmail.delegate = self
+        tfFullName.delegate = self
+        tfPhoneNumber.delegate = self
     }
 
     static let identifier = "CustomerInformationTBVCell"
@@ -57,3 +77,4 @@ extension CustomerInformationTBVCell: UITextFieldDelegate{
         return false
     }
 }
+

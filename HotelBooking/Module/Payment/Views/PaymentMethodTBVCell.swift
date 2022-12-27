@@ -18,6 +18,11 @@ class PaymentMethodTBVCell: UITableViewCell {
     @IBOutlet weak var btnCash: UIButton!
     @IBOutlet weak var viewPaymentMethod: UIView!
     var chooseCash:Bool = true
+    var callbackAddCardname : ((String) -> Void)?
+    var callbackAddCardnumber : ((String) -> Void)?
+    var callbackAddCardCVV : ((String) -> Void)?
+    var callbackAddCardExpireDate : ((String) -> Void)?
+    var callBackPayBy: ((String) -> Void)?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -51,12 +56,30 @@ class PaymentMethodTBVCell: UITableViewCell {
         chooseCash = true
         setUIBtn()
         viewCardInformation.isHidden = true
+        callBackPayBy?("Cash")
     }
     
     @IBAction func payByVisa(_ sender: Any) {
         chooseCash = false
         setUIBtn()
         viewCardInformation.isHidden = false
+        callBackPayBy?("Visa")
+    }
+    
+    @IBAction func addCardNumber(_ sender: Any) {
+        guard let text = tfCardNumber.text else {return}
+        self.callbackAddCardnumber?(text)
+    }
+    
+    @IBAction func addCVV(_ sender: Any) {
+        guard let text = tfCVV.text else {return}
+        self.callbackAddCardCVV?(text)
+    }
+    
+    
+    @IBAction func addExpireDate(_ sender: Any) {
+        guard let text = tfExpireDate.text else {return}
+        self.callbackAddCardExpireDate?(text)
     }
     
     func setupUI(){
@@ -78,13 +101,29 @@ class PaymentMethodTBVCell: UITableViewCell {
         chooseCash = true
         setUIBtn()
         viewCardInformation.isHidden = true
-
+        tfCVV.delegate = self
+        tfCardOwner.delegate = self
+        tfCardNumber.delegate = self
+        tfExpireDate.delegate = self
     }
 
+    @IBAction func addcardname(_ sender: Any) {
+        guard let text = tfCardOwner.text else {return}
+        self.callbackAddCardname?(text)
+    }
+    
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
     
+}
+
+extension PaymentMethodTBVCell: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.contentView.endEditing(true)
+        return false
+    }
 }

@@ -60,9 +60,6 @@ class HeaderTitle: UIView {
             navigationController.popViewController(animated: true)
         }
     }
-    
-    
-    
 }
 
 
@@ -72,7 +69,7 @@ class HeaderHotel: UIView {
     var lblTitle = UILabel()
     var like = UIImageView()
     var isLiked: Bool = false
-    var callBackLike : (()->Void)?
+    var callBackLike : ((Bool)->Void)?
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -130,6 +127,9 @@ class HeaderHotel: UIView {
         let clickLike = UITapGestureRecognizer(target: self, action: #selector(liked))
         like.isUserInteractionEnabled = true
         like.addGestureRecognizer(clickLike)
+        
+        let addToSaved = UITapGestureRecognizer(target: self, action: #selector(addToSaved))
+        like.addGestureRecognizer(addToSaved)
     }
     @objc func goBack(){
         if let navigationController = self.window?.rootViewController as? UINavigationController {
@@ -146,6 +146,8 @@ class HeaderHotel: UIView {
         }
     }
     
-    
+    @objc func addToSaved(){
+        self.callBackLike?(isLiked)
+    }
     
 }

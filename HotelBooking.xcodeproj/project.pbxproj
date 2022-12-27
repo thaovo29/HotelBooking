@@ -10,6 +10,8 @@
 		01E191FEEF9BB8C5019D33AD /* Pods_HotelBooking_HotelBookingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA590B938891FB4A5E7989EC /* Pods_HotelBooking_HotelBookingUITests.framework */; };
 		225A7E18294F625400A1ECB8 /* HomeCategoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225A7E16294F625400A1ECB8 /* HomeCategoriesTableViewCell.swift */; };
 		225A7E19294F625400A1ECB8 /* HomeCategoriesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225A7E17294F625400A1ECB8 /* HomeCategoriesTableViewCell.xib */; };
+		22600E67295AB5F800AD9C59 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22600E65295AB5F800AD9C59 /* LocationTableViewCell.swift */; };
+		22600E68295AB5F800AD9C59 /* LocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22600E66295AB5F800AD9C59 /* LocationTableViewCell.xib */; };
 		2267105A295094B500B5F152 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22671059295094B500B5F152 /* Search.storyboard */; };
 		2274533D294F864400B4D6F1 /* HomeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2274533C294F864400B4D6F1 /* HomeManager.swift */; };
 		2274534129500BF800B4D6F1 /* DiscoverMoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2274533F29500BF800B4D6F1 /* DiscoverMoreCollectionViewCell.swift */; };
@@ -23,6 +25,13 @@
 		228750D729506FAE00669897 /* HeaderTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228750D629506FAE00669897 /* HeaderTitle.swift */; };
 		22906A8629553596001E4B2C /* PaymentMethodTBVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22906A8429553596001E4B2C /* PaymentMethodTBVCell.swift */; };
 		22906A8729553596001E4B2C /* PaymentMethodTBVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22906A8529553596001E4B2C /* PaymentMethodTBVCell.xib */; };
+		22906A892955BCB3001E4B2C /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22906A882955BCB3001E4B2C /* SavedViewController.swift */; };
+		22906A8B2955C99B001E4B2C /* BookingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22906A8A2955C99B001E4B2C /* BookingVC.swift */; };
+		22906A8D2955F592001E4B2C /* SavedVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22906A8C2955F592001E4B2C /* SavedVM.swift */; };
+		22906A8F2955FBAA001E4B2C /* BookingDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22906A8E2955FBAA001E4B2C /* BookingDetailVC.swift */; };
+		22906A912955FD32001E4B2C /* BookingDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22906A902955FD32001E4B2C /* BookingDetailVM.swift */; };
+		22906A942955FEAD001E4B2C /* CustomerInfomationBookingTBVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22906A922955FEAD001E4B2C /* CustomerInfomationBookingTBVCell.swift */; };
+		22906A952955FEAD001E4B2C /* CustomerInfomationBookingTBVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22906A932955FEAD001E4B2C /* CustomerInfomationBookingTBVCell.xib */; };
 		22A603C929543D520042A6FE /* Payment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22A603C829543D510042A6FE /* Payment.storyboard */; };
 		22A603CB29543DF40042A6FE /* PaymentDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A603CA29543DF40042A6FE /* PaymentDetailVC.swift */; };
 		22A603CD29543E050042A6FE /* PaymentDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A603CC29543E050042A6FE /* PaymentDetailVM.swift */; };
@@ -91,6 +100,8 @@
 		1ADC4A027B40B2B0EB238810 /* Pods-HotelBookingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotelBookingTests.release.xcconfig"; path = "Target Support Files/Pods-HotelBookingTests/Pods-HotelBookingTests.release.xcconfig"; sourceTree = "<group>"; };
 		225A7E16294F625400A1ECB8 /* HomeCategoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCategoriesTableViewCell.swift; sourceTree = "<group>"; };
 		225A7E17294F625400A1ECB8 /* HomeCategoriesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCategoriesTableViewCell.xib; sourceTree = "<group>"; };
+		22600E65295AB5F800AD9C59 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
+		22600E66295AB5F800AD9C59 /* LocationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationTableViewCell.xib; sourceTree = "<group>"; };
 		22671059295094B500B5F152 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		2274533C294F864400B4D6F1 /* HomeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManager.swift; sourceTree = "<group>"; };
 		2274533F29500BF800B4D6F1 /* DiscoverMoreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverMoreCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -104,6 +115,13 @@
 		228750D629506FAE00669897 /* HeaderTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTitle.swift; sourceTree = "<group>"; };
 		22906A8429553596001E4B2C /* PaymentMethodTBVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodTBVCell.swift; sourceTree = "<group>"; };
 		22906A8529553596001E4B2C /* PaymentMethodTBVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentMethodTBVCell.xib; sourceTree = "<group>"; };
+		22906A882955BCB3001E4B2C /* SavedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
+		22906A8A2955C99B001E4B2C /* BookingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingVC.swift; sourceTree = "<group>"; };
+		22906A8C2955F592001E4B2C /* SavedVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedVM.swift; sourceTree = "<group>"; };
+		22906A8E2955FBAA001E4B2C /* BookingDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDetailVC.swift; sourceTree = "<group>"; };
+		22906A902955FD32001E4B2C /* BookingDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDetailVM.swift; sourceTree = "<group>"; };
+		22906A922955FEAD001E4B2C /* CustomerInfomationBookingTBVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerInfomationBookingTBVCell.swift; sourceTree = "<group>"; };
+		22906A932955FEAD001E4B2C /* CustomerInfomationBookingTBVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomerInfomationBookingTBVCell.xib; sourceTree = "<group>"; };
 		22A603C829543D510042A6FE /* Payment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Payment.storyboard; sourceTree = "<group>"; };
 		22A603CA29543DF40042A6FE /* PaymentDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDetailVC.swift; sourceTree = "<group>"; };
 		22A603CC29543E050042A6FE /* PaymentDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDetailVM.swift; sourceTree = "<group>"; };
@@ -228,6 +246,8 @@
 				22FBB1E3295371F400614642 /* HotelLocationTBVCell.xib */,
 				22FBB1E6295376C000614642 /* RoomItemTableViewCell.swift */,
 				22FBB1E7295376C000614642 /* RoomItemTableViewCell.xib */,
+				22600E65295AB5F800AD9C59 /* LocationTableViewCell.swift */,
+				22600E66295AB5F800AD9C59 /* LocationTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -436,6 +456,8 @@
 				2274534029500BF800B4D6F1 /* DiscoverMoreCollectionViewCell.xib */,
 				2274534329500C7C00B4D6F1 /* DiscoverMoreTableViewCell.swift */,
 				2274534429500C7C00B4D6F1 /* DiscoverMoreTableViewCell.xib */,
+				22906A922955FEAD001E4B2C /* CustomerInfomationBookingTBVCell.swift */,
+				22906A932955FEAD001E4B2C /* CustomerInfomationBookingTBVCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -444,6 +466,8 @@
 			isa = PBXGroup;
 			children = (
 				227453492950143300B4D6F1 /* HomeVM.swift */,
+				22906A8C2955F592001E4B2C /* SavedVM.swift */,
+				22906A902955FD32001E4B2C /* BookingDetailVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -452,6 +476,9 @@
 			isa = PBXGroup;
 			children = (
 				22AD9385294F0CBA0071DF34 /* HomeVC.swift */,
+				22906A882955BCB3001E4B2C /* SavedViewController.swift */,
+				22906A8A2955C99B001E4B2C /* BookingVC.swift */,
+				22906A8E2955FBAA001E4B2C /* BookingDetailVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -518,6 +545,7 @@
 				22AD937B294F0CBA0071DF34 /* Frameworks */,
 				22AD937C294F0CBA0071DF34 /* Resources */,
 				C4EEE1C636D9F7FEECC8D613 /* [CP] Embed Pods Frameworks */,
+				4C56CA733AF9076054079AF8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -556,6 +584,7 @@
 				22AD939B294F0CC30071DF34 /* Frameworks */,
 				22AD939C294F0CC30071DF34 /* Resources */,
 				A8F3913F0DEF8FDB96433367 /* [CP] Embed Pods Frameworks */,
+				7591CE7CA770D3A6459F0080 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -615,12 +644,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22600E68295AB5F800AD9C59 /* LocationTableViewCell.xib in Resources */,
 				22FBB1E9295376C000614642 /* RoomItemTableViewCell.xib in Resources */,
 				22A603C929543D520042A6FE /* Payment.storyboard in Resources */,
 				22A603D129543EBC0042A6FE /* HotelInfomationTBVCell.xib in Resources */,
 				22B59EEC2954BFC9002DB778 /* CustomerInformationTBVCell.xib in Resources */,
 				2274534229500BF800B4D6F1 /* DiscoverMoreCollectionViewCell.xib in Resources */,
 				2274534629500C7C00B4D6F1 /* DiscoverMoreTableViewCell.xib in Resources */,
+				22906A952955FEAD001E4B2C /* CustomerInfomationBookingTBVCell.xib in Resources */,
 				22FBB1E5295371F400614642 /* HotelLocationTBVCell.xib in Resources */,
 				22AD34DD2952C18A0065CE01 /* HotelItemTBVCell.xib in Resources */,
 				225A7E19294F625400A1ECB8 /* HomeCategoriesTableViewCell.xib in Resources */,
@@ -696,6 +727,40 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		4C56CA733AF9076054079AF8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HotelBooking/Pods-HotelBooking-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HotelBooking/Pods-HotelBooking-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HotelBooking/Pods-HotelBooking-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7591CE7CA770D3A6459F0080 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HotelBooking-HotelBookingUITests/Pods-HotelBooking-HotelBookingUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HotelBooking-HotelBookingUITests/Pods-HotelBooking-HotelBookingUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HotelBooking-HotelBookingUITests/Pods-HotelBooking-HotelBookingUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A8F3913F0DEF8FDB96433367 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -767,7 +832,9 @@
 				22B59EE82954A527002DB778 /* OrderDetailModel.swift in Sources */,
 				22AD9386294F0CBA0071DF34 /* HomeVC.swift in Sources */,
 				22A603CD29543E050042A6FE /* PaymentDetailVM.swift in Sources */,
+				22906A942955FEAD001E4B2C /* CustomerInfomationBookingTBVCell.swift in Sources */,
 				22AD34D3295189070065CE01 /* NumberOfMemberVM.swift in Sources */,
+				22906A8D2955F592001E4B2C /* SavedVM.swift in Sources */,
 				22FBB1D8295365D100614642 /* HotelDetailAboutTBVCell.swift in Sources */,
 				22AD34DC2952C18A0065CE01 /* HotelItemTBVCell.swift in Sources */,
 				22C958BD295051900076EED3 /* NavBottomBar.swift in Sources */,
@@ -778,10 +845,13 @@
 				2274533D294F864400B4D6F1 /* HomeManager.swift in Sources */,
 				22A603D3295463B50042A6FE /* PaymentManager.swift in Sources */,
 				22AD9382294F0CBA0071DF34 /* AppDelegate.swift in Sources */,
+				22600E67295AB5F800AD9C59 /* LocationTableViewCell.swift in Sources */,
 				22AD34D92952C1490065CE01 /* HotelSearchVM.swift in Sources */,
+				22906A8B2955C99B001E4B2C /* BookingVC.swift in Sources */,
 				22B59EEB2954BFC9002DB778 /* CustomerInformationTBVCell.swift in Sources */,
 				22AD34CD295186290065CE01 /* HotelCustomVM.swift in Sources */,
 				22AD34D0295188DB0065CE01 /* NumberOfMemberViewController.swift in Sources */,
+				22906A8F2955FBAA001E4B2C /* BookingDetailVC.swift in Sources */,
 				22FBB1DC2953679500614642 /* HotelDetailFacilityTBVCell.swift in Sources */,
 				225A7E18294F625400A1ECB8 /* HomeCategoriesTableViewCell.swift in Sources */,
 				22FBB1ED29537EB200614642 /* RoomListVM.swift in Sources */,
@@ -793,8 +863,10 @@
 				22AD34E12952EC0E0065CE01 /* SearchService.swift in Sources */,
 				228750D429506EE000669897 /* HotelCustomVC.swift in Sources */,
 				22FBB1E0295368E300614642 /* FacilityCollectionViewCell.swift in Sources */,
+				22906A912955FD32001E4B2C /* BookingDetailVM.swift in Sources */,
 				22A603D029543EBC0042A6FE /* HotelInfomationTBVCell.swift in Sources */,
 				22AD34D5295194A30065CE01 /* SearchManager.swift in Sources */,
+				22906A892955BCB3001E4B2C /* SavedViewController.swift in Sources */,
 				22906A8629553596001E4B2C /* PaymentMethodTBVCell.swift in Sources */,
 				22AD34E529531F8E0065CE01 /* HotelDetailVM.swift in Sources */,
 			);

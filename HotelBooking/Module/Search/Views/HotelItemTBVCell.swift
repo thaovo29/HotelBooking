@@ -9,6 +9,7 @@ import UIKit
 
 class HotelItemTBVCell: UITableViewCell {
 
+    @IBOutlet weak var viewPrice: UIView!
     @IBOutlet weak var viewaddress: UIView!
     @IBOutlet weak var lblPrice: UILabel!
     @IBOutlet weak var lblAddress: UILabel!
@@ -73,7 +74,7 @@ class HotelItemTBVCell: UITableViewCell {
         }
     }
     
-    func configure(with model: HotelSearchItem){
+    func configure(with model: HotelSearchItem, isShownPrice: Bool = true){
         let url = URL(string: model.imageURL)
         downloadImage(from: url)
         self.lblHotelName.text = model.name
@@ -82,5 +83,6 @@ class HotelItemTBVCell: UITableViewCell {
         }
         self.lblAddress.text = model.address
         setStarRatingView(rate: model.rate)
+        viewPrice.isHidden = !isShownPrice
     }
 }

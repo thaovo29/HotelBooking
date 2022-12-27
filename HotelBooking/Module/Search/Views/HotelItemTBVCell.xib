@@ -127,6 +127,7 @@
                 <outlet property="lblAddress" destination="Scl-EH-geg" id="ojX-Am-Ns1"/>
                 <outlet property="lblHotelName" destination="CXo-Yt-ZMc" id="8Ks-lA-9hq"/>
                 <outlet property="lblPrice" destination="lkp-3g-gw6" id="iUz-ty-Sin"/>
+                <outlet property="viewPrice" destination="Vpf-VG-VJu" id="fwc-KK-1gT"/>
                 <outlet property="viewRating" destination="m1K-bG-RbP" id="GRe-LR-3Am"/>
                 <outlet property="viewaddress" destination="ALS-xG-du6" id="D8i-gL-h4L"/>
             </connections>
